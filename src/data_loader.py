@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 
+
 def load_transactions_data():
 
     base_path = os.path.dirname(__file__)

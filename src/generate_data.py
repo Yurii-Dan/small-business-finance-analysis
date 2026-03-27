@@ -14,23 +14,20 @@ expense_categories = ["marketing", "utilities", "software"]
 revenue_categories = ["sales", "services"]
 
 # Amount ranges for each category
-expense_ranges = {    
+expense_ranges = {
     "marketing": (500, 3000),
     "utilities": (300, 1500),
-    "software": (100, 1000)
+    "software": (100, 1000),
 }
 
-revenue_ranges = {
-    "sales": (2000, 10000),
-    "services": (1000, 5000)
-}
+revenue_ranges = {"sales": (2000, 10000), "services": (1000, 5000)}
 
 # List to store generated transactions
 transactions = []
 
 # Main loop through each day
 while current_date <= end_date:
-    
+
     # Convert date to string format
     date_str = current_date.strftime("%Y-%m-%d")
 
@@ -49,19 +46,13 @@ while current_date <= end_date:
     for _ in range(transactions_per_day):
 
         # Choose transaction type with probability
-        transaction_type = random.choices(
-            ["expense", "revenue"],
-            weights=[0.4, 0.6]
-        )[0]
+        transaction_type = random.choices(["expense", "revenue"], weights=[0.4, 0.6])[0]
 
         if transaction_type == "expense":
             category = random.choice(expense_categories)
             amount = random.randint(*expense_ranges[category])
         else:
-            category = random.choices(
-                revenue_categories,
-                weights=[0.7, 0.3]
-            )[0]
+            category = random.choices(revenue_categories, weights=[0.7, 0.3])[0]
             amount = random.randint(*revenue_ranges[category])
 
         # Append transaction
