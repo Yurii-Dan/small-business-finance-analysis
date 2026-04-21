@@ -39,18 +39,50 @@ The analysis scripts and visualizations will automatically adapt to the new data
 ![Revenue & Expense](outputs/revenue_expense.png)
 ![Profit](outputs/profit.png)
 
+## Tableau Dashboard
+
+![Dashboard Overview](outputs/dashboard_overview.png)
+
+### KPI Overview
+
+![KPI Overview](outputs/kpi.png)
+
+### Trend Analysis
+
+![Trend Analysis](outputs/trend.png)
+
+### Expense Breakdown
+
+![Expense Breakdown](outputs/breakdown.png)
+
+The interactive dashboard was built in Tableau to complement the Python analysis and provide a business-oriented view of financial performance.
+
+**Key features:**
+
+* KPI tracking: Revenue, Expenses, Profit, Profit Margin
+* Time-series analysis of revenue and profit trends
+* Expense breakdown by category
+* Dynamic Top N filtering using a parameter
+* Interactive filtering for flexible data exploration
+
+**File:**
+
+* `outputs/finance_dashboard.twbx`
+
 ## Key Insights
+Insights are derived from both Python-based analysis and the Tableau dashboard.
 
 ### Financial Overview
 - The business is profitable throughout the year
 - Total annual profit: 1,012,298
 - Average profit margin: ~65%
 - Profitability shows clear seasonal variation
+- Total annual revenue and expenses are clearly visualized through KPI tracking in the dashboard
 
 ### Revenue Trends
 - Revenue peaks in January, followed by a decline in February–March
 - Secondary growth in August–September
-- Strong indication of seasonality
+- Clear seasonality pattern confirmed by both time-series analysis and dashboard visualization
 
 ### Expense Analysis
 - Salary (~35%) and Marketing (~28%) are the largest cost drivers
@@ -66,8 +98,9 @@ The analysis scripts and visualizations will automatically adapt to the new data
 - There is a need for customer retention strategies after the peak season
 - Opportunity to optimize marketing efficiency
 - Potential to diversify revenue sources
+- Interactive filtering allows dynamic exploration of high-cost categories
+- Top N analysis highlights the most impactful expense drivers
 
 ## Future Improvements
-- Build an interactive dashboard in Tableau
 - Store and query data using PostgreSQL
 - Implement forecasting for revenue and profit
