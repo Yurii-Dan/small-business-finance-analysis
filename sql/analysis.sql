@@ -22,6 +22,9 @@ SELECT *
 FROM transactions
 WHERE date IS NULL OR type IS NULL OR category IS NULL OR amount IS NULL;
 
+-- Check unique categories
+SELECT DISTINCT category FROM transactions;
+
 -- ========================================
 -- BASIC KPI (Simple approach)
 -- ========================================
@@ -38,24 +41,32 @@ FROM transactions;
 -- KPI (CTE version - cleaner approach)
 -- ========================================
 
-WITH total_revenue AS(
+-- NOTE:
+-- This query calculates KPIs for the entire dataset.
+-- To limit analysis to a specific period, add a date filter in each CTE:
+-- Example:
+-- WHERE date BETWEEN '2025-01-01' AND '2025-12-31'
+
+WITH total_revenue AS (
 	SELECT
 		SUM(amount) AS total_revenue
 	FROM transactions
 	WHERE type = 'revenue'
+	 -- AND date BETWEEN '2025-01-01' AND '2025-12-31'
 ),
 total_expenses AS(
 	SELECT
 		SUM(amount) AS total_expenses
 	FROM transactions
 	WHERE type = 'expense'
+	 -- AND date BETWEEN '2025-01-01' AND '2025-12-31'
 	)
 SELECT
 	tr.total_revenue,
 	te.total_expenses,
 	tr.total_revenue - te.total_expenses AS total_profit
 FROM total_revenue tr
-CROSS JOIN total_expenses te
+CROSS JOIN total_expenses te;
 
 -- ========================================
 -- MONTHLY ANALYSIS (Simple approach)
@@ -91,3 +102,35 @@ SELECT
 FROM prepared_data
 GROUP BY month
 ORDER BY month;
+
+-- ========================================
+-- Top expense categories
+-- ========================================
+
+-- Calculates:
+-- 1. Total expenses by category
+-- 2. Ranking of categories by expenses
+-- 3. Contribution (%) of each category
+-- 4. Cumulative percentage (Pareto 80/20 analysis)
+
+WITH category_expenses AS (
+    SELECT
+        category,
+        SUM(amount) AS total_expenses
+    FROM transactions
+    WHERE type = 'expense'
+	-- AND date BETWEEN '2025-01-01' AND '2025-12-31'
+    GROUP BY category
+)
+SELECT
+    category,
+    total_expenses,
+    RANK() OVER (ORDER BY total_expenses DESC) AS expense_rank,
+	ROUND(100.0 * total_expenses / SUM(total_expenses) OVER (), 2) AS contribution_percent,
+	ROUND(
+    100.0 * SUM(total_expenses) OVER (ORDER BY total_expenses DESC)
+    / SUM(total_expenses) OVER (),
+    2
+) AS cumulative_percent
+FROM category_expenses
+ORDER BY total_expenses DESC;
