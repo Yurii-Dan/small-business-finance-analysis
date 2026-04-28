@@ -2,7 +2,9 @@
 
 This project simulates and analyzes financial data for a small business to uncover trends, identify key cost drivers, and highlight opportunities for optimization.
 
-The analysis is performed using Python (Pandas, Matplotlib), with plans to extend the project using SQL and Tableau for advanced analytics and visualization.
+It leverages Python (Pandas, Matplotlib) for data processing, PostgreSQL for data storage and querying, and Tableau for interactive visualization.
+
+The project represents an end-to-end data analytics workflow, covering data generation, analysis, and business insight extraction.
 
 ## Dataset Description
 The dataset contains daily financial transactions for the year 2025, including:
@@ -12,13 +14,15 @@ The dataset contains daily financial transactions for the year 2025, including:
 
 ## Tools & Technologies
 - Python (Pandas, Matplotlib)
-- CSV-based data storage
-- Tableau
+- PostgreSQL (data storage and SQL analysis)
+- Tableau (data visualization and dashboarding)
+- CSV (data source)
 
 ## Project Structure
-- data/ — dataset
-- src/ — source code
-- outputs/ — generated visualizations
+- data/ — dataset (CSV file)
+- src/ — Python scripts for data generation and analysis
+- sql/ — SQL queries for data analysis (PostgreSQL)
+- outputs/ — generated visualizations and Tableau dashboard files
 
 ## How to Use
 
