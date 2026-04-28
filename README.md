@@ -69,8 +69,35 @@ The interactive dashboard was built in Tableau to complement the Python analysis
 
 * `outputs/finance_dashboard.twbx`
 
+## SQL Analysis (PostgreSQL)
+
+This project includes SQL-based data analysis using PostgreSQL.
+
+### Key components:
+
+* **Exploratory Data Analysis (EDA)**
+  Basic dataset validation and structure checks
+
+* **KPI Calculation**
+  Total revenue, expenses, and profit (simple and CTE-based approaches)
+
+* **Time-based Analysis**
+  Monthly aggregation of financial metrics
+
+* **Category Analysis**
+  Expense breakdown by category
+
+* **Advanced SQL (Window Functions)**
+
+  * Ranking categories by expenses
+  * Contribution (%) calculation
+  * Cumulative percentage (Pareto analysis)
+
+All queries are available in the `sql/analysis.sql` file.
+
+
 ## Key Insights
-Insights are derived from both Python-based analysis and the Tableau dashboard.
+Insights are derived from Python analysis, SQL queries, and the Tableau dashboard.
 
 ### Financial Overview
 - The business is profitable throughout the year
@@ -102,5 +129,4 @@ Insights are derived from both Python-based analysis and the Tableau dashboard.
 - Top N analysis highlights the most impactful expense drivers
 
 ## Future Improvements
-- Store and query data using PostgreSQL
 - Implement forecasting for revenue and profit
