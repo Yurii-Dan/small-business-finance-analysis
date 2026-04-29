@@ -105,8 +105,8 @@ Insights are derived from Python analysis, SQL queries, and the Tableau dashboar
 
 ### Financial Overview
 - The business is profitable throughout the year
-- Total annual profit: 1,012,298
-- Average profit margin: ~65%
+- Total annual profit: 1,012,298 (synthetic data)
+- Average profit margin: ~65% (based on synthetic data)
 - Profitability shows clear seasonal variation
 - Total annual revenue and expenses are clearly visualized through KPI tracking in the dashboard
 
@@ -131,3 +131,7 @@ Insights are derived from Python analysis, SQL queries, and the Tableau dashboar
 - Potential to diversify revenue sources
 - Interactive filtering allows dynamic exploration of high-cost categories
 - Top N analysis highlights the most impactful expense drivers
+
+## Conclusion
+
+This project demonstrates the ability to work with data across multiple tools, from raw data processing to business-oriented insights and dashboard development.
