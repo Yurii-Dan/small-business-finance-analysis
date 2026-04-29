@@ -131,6 +131,3 @@ Insights are derived from Python analysis, SQL queries, and the Tableau dashboar
 - Potential to diversify revenue sources
 - Interactive filtering allows dynamic exploration of high-cost categories
 - Top N analysis highlights the most impactful expense drivers
-
-## Future Improvements
-- Implement forecasting for revenue and profit
