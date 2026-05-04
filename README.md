@@ -104,21 +104,21 @@ All queries are available in the `sql/analysis.sql` file.
 Insights are derived from Python analysis, SQL queries, and the Tableau dashboard.
 
 ### Financial Overview
-- The business is profitable throughout the year
-- Total annual profit: 1,012,298 (synthetic data)
+- The business remains profitable across the observed period
+- Total annual revenue and expenses are summarized through KPI tracking in the dashboard
 - Average profit margin: ~65% (based on synthetic data)
-- Profitability shows clear seasonal variation
+- Profitability shows variation throughout the year, with potential seasonal patterns based on one year of data
 - Total annual revenue and expenses are clearly visualized through KPI tracking in the dashboard
 
 ### Revenue Trends
 - Revenue peaks in January, followed by a decline in February–March
 - Secondary growth in August–September
-- Clear seasonality pattern confirmed by both time-series analysis and dashboard visualization
+- Potential seasonal patterns observed based on one year of data; confirmation would require multi-year data
 
 ### Expense Analysis
 - Salary (~35%) and Marketing (~28%) are the largest cost drivers
 - Fixed costs exceed 50% of total expenses
-- Marketing is the most flexible cost for optimization
+- Marketing represents the most flexible cost category and a key lever for optimization
 
 ### Revenue Structure
 - Sales: ~80%
@@ -126,12 +126,14 @@ Insights are derived from Python analysis, SQL queries, and the Tableau dashboar
 - The business shows high dependency on a single revenue stream
 
 ### Business Implications
-- There is a need for customer retention strategies after the peak season
-- Opportunity to optimize marketing efficiency
-- Potential to diversify revenue sources
-- Interactive filtering allows dynamic exploration of high-cost categories
-- Top N analysis highlights the most impactful expense drivers
+- Implement retention campaigns after peak revenue periods to reduce post-peak decline (e.g., February–March)
+- Reallocate marketing budget towards high-performing periods (January, August–September) to maximize ROI
+- Focus cost optimization efforts on top expense categories (Salary, Marketing), which account for the majority of expenses
+- Reduce dependency on sales (~80%) by expanding service offerings to stabilize revenue streams
+- Use dashboard filtering to identify and monitor high-cost categories for continuous cost control
 
 ## Conclusion
 
-This project demonstrates the ability to work with data across multiple tools, from raw data processing to business-oriented insights and dashboard development.
+This project demonstrates an end-to-end data analytics workflow, from data generation and processing to SQL-based analysis and business-oriented insights. 
+
+It highlights the ability to combine Python, SQL, and Tableau to analyze financial performance, identify key cost drivers, and support data-driven decision-making.
