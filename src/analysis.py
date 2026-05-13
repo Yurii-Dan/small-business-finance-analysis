@@ -16,7 +16,7 @@ print(df.head())
 
 # Show dataset structure and column types
 print("\nDataset info:")
-print(df.info())
+df.info()
 
 # Check for missing values
 print("\nMissing values:")
